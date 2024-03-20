@@ -1,6 +1,5 @@
 <?php
     require_once("../../conexion/connection.php"); 
-	include("../../controller/validar_sesion.php");
     $conexion = new Database();
     $con = $conexion->conectar();
 	
@@ -38,14 +37,8 @@ if(isset($_POST['btncerrar']))
     <link rel="stylesheet" type="text/css" href="../../css/estilos4.css">
 </head>
 <body>
-        <?php  
-
-        $sql = $con->prepare("SELECT * FROM usuario, tipo_usuario");
-        $sql -> execute();
-        $fila = $sql -> fetch();
-        ?>
+        
         <section class="container">
-            <h1>Bienvenido/a <?php echo $fila['tipo_usu']?> <?php echo $_SESSION['nombre']?> </h1>
 
 		<div class="all-products">
 			<div class="product">
