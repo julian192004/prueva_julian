@@ -1,6 +1,5 @@
 <?php
-    require_once("../../conexion/connection.php"); 
-    $conexion = new Database();
+require_once("../../conexion/connection.php");     $conexion = new Database();
     $con = $conexion->conectar();
 	
 	
@@ -17,13 +16,6 @@
 
 <?php 
 
-if(isset($_POST['btncerrar']))
-{
-    session_destroy();
-
-   
-    header('location: ../../login.html');
-}
     
 ?>
 
@@ -45,23 +37,15 @@ if(isset($_POST['btncerrar']))
 				<img src="../../img/pedido.jpg">
 				<div class="product-info">
 					<h4 class="product-title">pacientes</h4>
-					<a class="product-btn" href="pacientes.php">pacientes</a>
-				</div>
-			</div>
-            <div class="product">
-			<img src="../../img/plato.jpg">
-				<div class="product-info">
-					<h4 class="product-title">plato diario
-					</h4>
-					<a class="product-btn" href="platos_diarios.php">Ingresar</a>
+					<a class="product-btn" href="../pacientes.php">pacientes</a>
 				</div>
 			</div>
             <div class="product">
 				<img src="../../img/usuario.jpg">
 				<div class="product-info">
-					<h4 class="product-title">usuarios
+					<h4 class="product-title">emergencias
 					</h4>
-					<a class="product-btn" href="usuario.php">Ingresar</a>
+					<a class="product-btn" href="emergencias.php">Ingresar</a>
 				</div>
 			
 				</div>
@@ -72,26 +56,9 @@ if(isset($_POST['btncerrar']))
 					<a class="product-btn" href="medicos.php">Ingresar</a>
 				</div>
 			
-				</div>
-				<div class="product">
-				<img src="../../img/usuario.jpg">
-				<div class="product-info">
-					<h4 class="product-title">tipo_usuario
-					</h4>
-					<a class="product-btn" href="tipo_usuario.php">Ingresar</a>
-				</div>
+				
 			
-				</div><div class="product">
-				<img src="../../img/usuario.jpg">
-				<div class="product-info">
-					<h4 class="product-title">tip_plato
-					</h4>
-					<a class="product-btn" href="tip_plato.php">Ingresar</a>
-				</div>
-			
-				</div>
 
-			</div>
 
 		</div>
 		
