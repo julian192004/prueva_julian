@@ -5,17 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Médicos</title>
     <style>
-        /* Estilos generales */
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
         }
 
         main {
-            width: 80%;
-            margin: 50px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         .formulario {
@@ -23,6 +29,7 @@
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
         }
 
         .formulario__grupo-input {
@@ -30,58 +37,51 @@
         }
 
         .formulario__label {
+            display: block;
             font-weight: bold;
+            margin-bottom: 5px;
         }
 
         .formulario__input {
             width: 100%;
             padding: 10px;
-            border: 1px solid #ccc;
             border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-        .formulario__select {
-            width: 100%;
-            padding: 10px;
             border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
         }
 
         .formulario__btn {
-            display: block;
             width: 100%;
             padding: 10px;
-            background-color: #007bff;
-            color: #fff;
             border: none;
             border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
             cursor: pointer;
-            font-size: 16px;
+            margin-top: 10px;
         }
 
         .formulario__btn:hover {
             background-color: #0056b3;
         }
+
+        .formulario__btn + .formulario__btn {
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
+    <h1>FORMULARIO DE MÉDICO</h1>
     <main>
-        <form method="POST" autocomplete="off" class="formulario" id="formulario" action="registro.php">
-            <div class="formulario__grupo-input">
-                <label for="documento" class="formulario__label">Documento *</label>
-                <input type="text" class="formulario__input" name="doc" id="documento" placeholder="Documento" required>
-            </div>
+        <form method="POST" autocomplete="off" class="formulario" id="formulario" action="registro_medico.php">
 
             <div class="formulario__grupo-input">
                 <label for="nombre" class="formulario__label">Nombre *</label>
-                <input type="text" class="formulario__input" name="nom" id="nombre" placeholder="Nombre" required>
+                <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Nombre" required>
             </div>
 
             <div class="formulario__grupo-input">
-                <label for="especialidad" class="formulario__label">Especialidad</label>
-                <input type="text" class="formulario__input" name="especialidad" id="especialidad" placeholder="Especialidad">
+                <label for="especialidad" class="formulario__label">Especialidad *</label>
+                <input type="text" class="formulario__input" name="especialidad" id="especialidad" placeholder="Especialidad" required>
             </div>
 
             <div class="formulario__grupo-input">
@@ -90,9 +90,8 @@
             </div>
 
             <button type="submit" class="formulario__btn">Enviar</button>
+            <button onclick="window.location.href = 'form_paciente.php';" class="formulario__btn">Ir al formulario de Paciente</button>
         </form>
     </main>
-
-    <script src="formulario.js"></script>
 </body>
 </html>

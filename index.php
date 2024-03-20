@@ -12,7 +12,7 @@ session_start();
         <td colspan='1'></td>
     </tr>
 
-    <input type="submit" value="Cerrar sesion" name="btncerrar" >
+    <input type="submit" value="Salir" name="btncerrar" >
 </tr>
 </form>
 
@@ -28,7 +28,7 @@ session_start();
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Interfaz admin</title>
-    <link rel="stylesheet" type="text/css" href="css/estilos4.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
         
@@ -36,14 +36,14 @@ session_start();
 
 		<div class="all-products">
 			<div class="product">
-				<img src="../../img/pedido.jpg">
+				<img src="img/pacientes.jpg">
 				<div class="product-info">
 					<h4 class="product-title">pacientes</h4>
 					<a class="product-btn" href="model/hospital/pacientes.php">pacientes</a>
 				</div>
 			</div>
-            <div class="product">
-				<img src="../../img/usuario.jpg">
+			<div class="product">
+				<img src="img/urgencias.jpg">
 				<div class="product-info">
 					<h4 class="product-title">urgencias
 					</h4>
@@ -52,6 +52,7 @@ session_start();
 			
 				</div>
 				<div class="product">
+				<img src="img/medicos.jpg">
 				<div class="product-info">
 					<h4 class="product-title">medicos
 					</h4>
