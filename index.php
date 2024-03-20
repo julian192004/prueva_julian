@@ -1,5 +1,5 @@
 <?php
-require_once("../../conexion/connection.php");     $conexion = new Database();
+require_once("/conexion/connection.php");     $conexion = new Database();
     $con = $conexion->conectar();
 	
 	
@@ -37,15 +37,15 @@ require_once("../../conexion/connection.php");     $conexion = new Database();
 				<img src="../../img/pedido.jpg">
 				<div class="product-info">
 					<h4 class="product-title">pacientes</h4>
-					<a class="product-btn" href="../pacientes.php">pacientes</a>
+					<a class="product-btn" href="/model/hospital/pacientes.php">pacientes</a>
 				</div>
 			</div>
             <div class="product">
 				<img src="../../img/usuario.jpg">
 				<div class="product-info">
-					<h4 class="product-title">emergencias
+					<h4 class="product-title">urgencias
 					</h4>
-					<a class="product-btn" href="emergencias.php">Ingresar</a>
+					<a class="product-btn" href="/model/hospital/urgencias.php">Ingresar</a>
 				</div>
 			
 				</div>
@@ -53,7 +53,7 @@ require_once("../../conexion/connection.php");     $conexion = new Database();
 				<div class="product-info">
 					<h4 class="product-title">medicos
 					</h4>
-					<a class="product-btn" href="medicos.php">Ingresar</a>
+					<a class="product-btn" href="/model/hospital/medicos.php">Ingresar</a>
 				</div>
 			
 				
