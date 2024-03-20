@@ -90,6 +90,8 @@
                 <input type="text" class="formulario__input" name="enfermedad" id="enfermedad" placeholder="Enfermedad">
             </div>
             <button type="submit" class="formulario__btn">Registrar urgencia </button><br>
+            <button onclick="window.location.href = 'model/index.php';" class="formulario__btn">Ir a las tablas</button>
+
         </form>
     </main>
 

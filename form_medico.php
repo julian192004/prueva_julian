@@ -90,7 +90,7 @@
             </div>
 
             <button type="submit" class="formulario__btn">Enviar</button>
-            <button onclick="window.location.href = 'form_paciente.php';" class="formulario__btn">Ir al formulario de Paciente</button>
+            <button onclick="window.location.href = 'form_urgencia.php';" class="formulario__btn">Ir al formulario de urgencias</button>
         </form>
     </main>
 </body>
