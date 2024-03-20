@@ -44,8 +44,8 @@ if(isset($_POST['btncerrar']))
 			<div class="product">
 				<img src="../../img/pedido.jpg">
 				<div class="product-info">
-					<h4 class="product-title">pedidos</h4>
-					<a class="product-btn" href="pedido.php">Ingresar</a>
+					<h4 class="product-title">pacientes</h4>
+					<a class="product-btn" href="pacientes.php">pacientes</a>
 				</div>
 			</div>
             <div class="product">
@@ -66,11 +66,10 @@ if(isset($_POST['btncerrar']))
 			
 				</div>
 				<div class="product">
-				<img src="../../img/usuario.jpg">
 				<div class="product-info">
-					<h4 class="product-title">estado
+					<h4 class="product-title">medicos
 					</h4>
-					<a class="product-btn" href="estado.php">Ingresar</a>
+					<a class="product-btn" href="medicos.php">Ingresar</a>
 				</div>
 			
 				</div>
