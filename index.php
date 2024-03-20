@@ -6,7 +6,6 @@ session_start();
 ?>
 
 	
-?>
 
 <form method="POST">
     <tr>
