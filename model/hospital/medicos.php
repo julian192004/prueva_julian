@@ -35,7 +35,6 @@ if ($resultado) {
                         <th>Nombre</th>
                         <th>Especialidad</th>
                         <th>Teléfono</th>
-                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,10 +48,7 @@ if ($resultado) {
                             <td>' . $fila["especialidad"] . '</td>
                             <td>' . $fila["telefono"] . '</td>
                             <td>
-                                <div class="text-center">
-                                    <a href="editar/editar_medico.php?id=' . $fila["id"] . '" class="btn btn-primary btn-sm">Editar</a>
-                                    <a href="eliminar/eliminar_medico.php?id=' . $fila["id"] . '" class="btn btn-danger btn-sm">Eliminar</a>
-                                </div>
+                             
                             </td>
                         </tr>';
                     }
@@ -62,13 +58,10 @@ if ($resultado) {
             </table>
             <div class="row mt-3">
                 <div class="col-md-6 text-start">
-                    <form action="index.php">
+                    <form action="../../index.php">
                         <input type="submit" value="Regresar" class="btn btn-secondary"/>
                     </form>
                 </div>
-            </div>
-            <div class="text-end mb-3">
-                <a href="crear/crear_medico.php" class="btn btn-success">Crear Nuevo Médico</a>
             </div>
         </div>
         </body>

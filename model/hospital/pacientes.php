@@ -33,7 +33,6 @@ $resultado = $con->query($consulta);
                 <th>Género</th>
                 <th>Dirección</th>
                 <th>Teléfono</th>
-                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -49,10 +48,6 @@ $resultado = $con->query($consulta);
                     <td>' . $fila["direccion"] . '</td>
                     <td>' . $fila["telefono"] . '</td>
                     <td>
-                        <div class="text-center">
-                            <a href="editar/editar_paciente.php?id=' . $fila["id"] . '" class="btn btn-primary btn-sm">Editar</a>
-                            <a href="eliminar/eliminar_paciente.php?id=' . $fila["id"] . '" class="btn btn-danger btn-sm">Eliminar</a>
-                        </div>
                     </td>
                 </tr>';
             }
@@ -61,7 +56,7 @@ $resultado = $con->query($consulta);
     </table>
     <div class="row mt-3">
         <div class="col-md-6 text-start">
-            <form action="index.php">
+        <form action="../../index.php">
                 <input type="submit" value="Regresar" class="btn btn-secondary"/>
             </form>
         </div>

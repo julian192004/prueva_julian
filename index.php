@@ -1,7 +1,10 @@
 <?php
-require_once("/conexion/connection.php");     $conexion = new Database();
-    $con = $conexion->conectar();
-	
+require_once("conexion/connection.php");
+$DataBase = new Database;
+$con = $DataBase->conectar();
+session_start();
+?>
+
 	
 ?>
 
@@ -26,7 +29,7 @@ require_once("/conexion/connection.php");     $conexion = new Database();
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Interfaz admin</title>
-    <link rel="stylesheet" type="text/css" href="../../css/estilos4.css">
+    <link rel="stylesheet" type="text/css" href="css/estilos4.css">
 </head>
 <body>
         
@@ -37,7 +40,7 @@ require_once("/conexion/connection.php");     $conexion = new Database();
 				<img src="../../img/pedido.jpg">
 				<div class="product-info">
 					<h4 class="product-title">pacientes</h4>
-					<a class="product-btn" href="/model/hospital/pacientes.php">pacientes</a>
+					<a class="product-btn" href="model/hospital/pacientes.php">pacientes</a>
 				</div>
 			</div>
             <div class="product">
@@ -45,7 +48,7 @@ require_once("/conexion/connection.php");     $conexion = new Database();
 				<div class="product-info">
 					<h4 class="product-title">urgencias
 					</h4>
-					<a class="product-btn" href="/model/hospital/urgencias.php">Ingresar</a>
+					<a class="product-btn" href="model/hospital/urgencias.php">Ingresar</a>
 				</div>
 			
 				</div>
@@ -53,7 +56,7 @@ require_once("/conexion/connection.php");     $conexion = new Database();
 				<div class="product-info">
 					<h4 class="product-title">medicos
 					</h4>
-					<a class="product-btn" href="/model/hospital/medicos.php">Ingresar</a>
+					<a class="product-btn" href="model/hospital/medicos.php">Ingresar</a>
 				</div>
 			
 				
