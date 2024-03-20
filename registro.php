@@ -4,29 +4,41 @@ $DataBase = new Database;
 $con = $DataBase->conectar();
 session_start();
 
-
-	
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $doc = isset($_POST['doc']) ? $_POST['doc'] : null;
     $nom = isset($_POST['nom']) ? $_POST['nom'] : null;
-    $edad = isset($_POST['edad']) ? $_POST['edad'] : null;
-    $genero = isset($_POST['genero']) ? $_POST['genero'] : null;
-    $direccion = isset($_POST['direccion']) ? $_POST['direccion'] : null;
+    $especialidad = isset($_POST['especialidad']) ? $_POST['especialidad'] : null;
     $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : null;
 
+    // Verificar si los datos mínimos requeridos están presentes
     if ($doc && $nom && $telefono) {
-        $insertSQL = $con->prepare("INSERT INTO pacientes (id, nombre, edad, genero, direccion, telefono) VALUES (:doc, :nom, :edad, :genero, :direccion, :telefono)");
-        $insertSQL->bindParam(':doc', $doc);
-        $insertSQL->bindParam(':nom', $nom);
-        $insertSQL->bindParam(':edad', $edad);
-        $insertSQL->bindParam(':genero', $genero);
-        $insertSQL->bindParam(':direccion', $direccion);
-        $insertSQL->bindParam(':telefono', $telefono);
+        // Verificar si el documento ya está registrado en la tabla de médicos
+        $consulta_existencia_medico = $con->prepare("SELECT COUNT(*) FROM medicos WHERE id = :doc");
+        $consulta_existencia_medico->bindParam(':doc', $doc);
+        $consulta_existencia_medico->execute();
+        $existe_medico = $consulta_existencia_medico->fetchColumn();
 
-        if ($insertSQL->execute()) {
-            echo "Registro exitoso.";
+        // Verificar si el documento ya está registrado en la tabla de pacientes
+        $consulta_existencia_paciente = $con->prepare("SELECT COUNT(*) FROM pacientes WHERE id = :doc");
+        $consulta_existencia_paciente->bindParam(':doc', $doc);
+        $consulta_existencia_paciente->execute();
+        $existe_paciente = $consulta_existencia_paciente->fetchColumn();
+
+        if ($existe_medico || $existe_paciente) {
+            echo "Error: El documento ya está registrado como médico o paciente.";
         } else {
-            echo "Error: No se pudo registrar el paciente.";
+            // Insertar el nuevo registro como médico
+            $insertSQL = $con->prepare("INSERT INTO medicos (id, nombre, especialidad, telefono) VALUES (:doc, :nom, :especialidad, :telefono)");
+            $insertSQL->bindParam(':doc', $doc);
+            $insertSQL->bindParam(':nom', $nom);
+            $insertSQL->bindParam(':especialidad', $especialidad);
+            $insertSQL->bindParam(':telefono', $telefono);
+
+            if ($insertSQL->execute()) {
+                echo "Registro de médico exitoso.";
+            } else {
+                echo "Error: No se pudo registrar al médico.";
+            }
         }
     } else {
         echo "Error: Faltan campos obligatorios.";
